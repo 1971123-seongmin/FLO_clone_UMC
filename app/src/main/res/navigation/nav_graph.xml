@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.flo_clone.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.flo_clone.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lockerFragment"
+        android:name="com.example.flo_clone.ui.locker.LockerFragment"
+        android:label="fragment_locker"
+        tools:layout="@layout/fragment_locker" >
+        <action
+            android:id="@+id/action_lockerFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lookFragment"
+        android:name="com.example.flo_clone.ui.look.LookFragment"
+        android:label="LookFragment"
+        tools:layout="@layout/fragment_look">
+        <action
+            android:id="@+id/action_lookFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
