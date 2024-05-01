@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SongActivity">
+
+    <ImageButton
+        android:id="@+id/player_setting_btn_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/btn_player_setting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/player_eq_btn_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/btn_player_eq_off"
+        app:layout_constraintStart_toEndOf="@+id/player_setting_btn_ib"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/nugu_btn_down_ib"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/nugu_btn_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/btn_player_more_ib"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/btn_player_more"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nugu_btn_down_ib" />
+
+    <TextView
+        android:id="@+id/song_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="제목"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginTop="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/singer_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가수 이름"
+        android:textSize="15dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/song_title_tv" />
+
+    <ImageButton
+        android:id="@+id/btn_main_arrow_more_ib"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/btn_main_arrow_more"
+        app:layout_constraintStart_toEndOf="@+id/singer_title_tv"
+        app:layout_constraintTop_toBottomOf="@+id/song_title_tv" />
+
+    <ImageView
+        android:id="@+id/album_img_iv"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/lilac_album_cover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singer_title_tv" />
+
+    <TextView
+        android:id="@+id/lyrics_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="나라는 꽃가루에"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/album_img_iv" />
+    <TextView
+        android:id="@+id/lyrics_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="눈이 따끔해 아야"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyrics_tv1" />
+
+    <ImageButton
+        android:id="@+id/ic_my_like_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_my_like_off"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lyrics_tv2" />
+
+    <ImageButton
+        android:id="@+id/btn_player_unlike_off_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="70dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_player_unlike_off"
+        app:layout_constraintStart_toStartOf="@+id/ic_my_like_ib"
+        app:layout_constraintTop_toBottomOf="@+id/lyrics_tv2" />
+
+    <View
+        android:id="@+id/player_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#D3D3D3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_player_unlike_off_ib" />
+
+    <TextView
+        android:id="@+id/start_timer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_bar_view" />
+
+    <TextView
+        android:id="@+id/end_timer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="10dp"
+        android:text="01:00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_bar_view" />
+
+    <ImageButton
+        android:id="@+id/nugu_btn_repeat_inactive_ib"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/nugu_btn_repeat_inactive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_timer_tv" />
+
+    <ImageButton
+        android:id="@+id/nugu_btn_skip_previous_ib"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="35dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/nugu_btn_skip_previous_32"
+        app:layout_constraintStart_toEndOf="@+id/nugu_btn_repeat_inactive_ib"
+        app:layout_constraintTop_toBottomOf="@+id/start_timer_tv" />
+
+    <ImageButton
+        android:id="@+id/nugu_btn_play_ib"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/nugu_btn_play_32"
+        app:layout_constraintStart_toEndOf="@+id/nugu_btn_skip_previous_ib"
+        app:layout_constraintTop_toBottomOf="@+id/player_bar_view" />
+    <ImageButton
+        android:id="@+id/nugu_btn_skip_next_ib"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/nugu_btn_skip_next_32"
+        app:layout_constraintStart_toEndOf="@+id/nugu_btn_play_ib"
+        app:layout_constraintTop_toBottomOf="@+id/start_timer_tv" />
+
+    <ImageButton
+        android:id="@+id/nugu_btn_random_inactive_ib"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/nugu_btn_random_inactive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_timer_tv" />
+
+    <ImageButton
+        android:id="@+id/btn_actionbar_instagram_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/btn_actionbar_instagram"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nugu_btn_repeat_inactive_ib" />
+
+    <ImageButton
+        android:id="@+id/btn_player_related_ib"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/btn_player_related"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nugu_btn_play_ib" />
+
+    <ImageButton
+        android:id="@+id/btn_player_go_list_ib"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/btn_player_go_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nugu_btn_random_inactive_ib" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
