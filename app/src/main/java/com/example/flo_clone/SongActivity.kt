@@ -47,8 +47,38 @@ class SongActivity : AppCompatActivity() {
             isPlaying = !isPlaying // 클릭할 때마다 상태 변경
             setPlayerStatus(isPlaying) // 변경된 상태에 따라 이미지 변경
         }
+
+        var isRepeat = true
+        binding.nuguBtnRepeatInactiveIb.setOnClickListener{
+            isRepeat = !isRepeat
+            setRepeatStatus(isRepeat)
+        }
+
+        var isRandom = true
+        binding.nuguBtnRandomInactiveIb.setOnClickListener{
+            isRandom = !isRandom
+            setRandomStatus(isRandom)
+        }
     }
-    fun setPlayerStatus(isPlaying: Boolean) {
+
+    private fun setRepeatStatus(isRepeat: Boolean) {
+        if (isRepeat) {
+            binding.nuguBtnRepeatInactiveIb.setImageResource(R.drawable.nugu_btn_repeat_inactive)
+        } else {
+            binding.nuguBtnRepeatInactiveIb.setImageResource(R.drawable.nugu_btn_play_32)
+        }
+    }
+
+    private fun setRandomStatus(isRandom: Boolean) {
+        if (isRandom) {
+            binding.nuguBtnRandomInactiveIb.setImageResource(R.drawable.nugu_btn_random_inactive)
+        } else {
+            binding.nuguBtnRandomInactiveIb.setImageResource(R.drawable.nugu_btn_play_32)
+        }
+    }
+
+
+    private fun setPlayerStatus(isPlaying: Boolean) {
         if (isPlaying) {
             binding.nuguBtnPlayIb.setImageResource(R.drawable.nugu_btn_play_32)
 
