@@ -1,6 +1,10 @@
 package com.example.flo_clone
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flo_clone.databinding.ActivityMainBinding
 import com.example.flo_clone.ui.home.HomeFragment
@@ -11,6 +15,19 @@ import com.example.flo_clone.ui.search.SearchFragment
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding // 뷰 바인딩 함수
 
+    companion object {
+        const val STRING_INTENT_KEY = "my_string_key"
+        const val TAG = "MainActivity"
+    }
+    private val getResultText = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val returnString = result.data?.getStringExtra(MainActivity.STRING_INTENT_KEY)
+            returnString?.let { makeToastMsg(it) }
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -18,6 +35,19 @@ class MainActivity : AppCompatActivity() {
 
         setStartFragment()
         setBottomNavigation()
+        changeActivity()
+    }
+    private fun makeToastMsg(msg: String) {
+        Toast.makeText(this, "${msg}", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun changeActivity() {
+        binding.mainPlayer.setOnClickListener {
+            val intent = Intent(this, SongActivity::class.java)
+            intent.putExtra("title", binding.playerTitleTv.text.toString())
+            intent.putExtra("singerName", binding.playerSingerTv.text.toString())
+            getResultText.launch(intent) // Song 액티비티를 시작하고 결과 처리 콜백 호출
+        }
     }
 
     private fun setStartFragment() {
