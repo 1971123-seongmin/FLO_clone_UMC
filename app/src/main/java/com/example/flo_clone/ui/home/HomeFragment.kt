@@ -17,7 +17,7 @@ import com.example.flo_clone.ui.home.banner.BannerFragment
 import com.example.flo_clone.ui.home.banner.BannerVPAdapter
 import com.example.flo_clone.ui.home.panel.PanelVPAdapter
 
-data class Song(val title: String, val singerName: String)
+data class SongPractice(val title: String, val singerName: String)
 
 class HomeFragment : Fragment() {
 
@@ -107,7 +107,7 @@ class HomeFragment : Fragment() {
         val albumImg = binding.albumIvImg1
         albumImg.setOnClickListener {
             val imgRes = R.drawable.lilac_album_cover
-            val song = Song(binding.tvAlbumName1.text.toString(), binding.tvAlbumSinger1.text.toString()) // 데이터 설정
+            val song = SongPractice(binding.tvAlbumName1.text.toString(), binding.tvAlbumSinger1.text.toString()) // 데이터 설정
             val albumFragment = AlbumFragment().apply {
                 arguments = Bundle().apply {
                     putInt("imgRes", imgRes)

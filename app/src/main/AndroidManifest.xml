@@ -13,10 +13,11 @@
         android:theme="@style/Theme.FLO_clone"
         tools:targetApi="31">
         <activity
-            android:name=".SongActivity"
+            android:name=".ui.song.SongActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.App.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
