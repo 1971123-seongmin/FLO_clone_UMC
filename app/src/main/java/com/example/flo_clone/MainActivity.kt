@@ -12,6 +12,8 @@ import com.example.flo_clone.ui.home.HomeFragment
 import com.example.flo_clone.ui.locker.LockerFragment
 import com.example.flo_clone.ui.look.LookFragment
 import com.example.flo_clone.ui.search.SearchFragment
+import com.example.flo_clone.ui.song.Song
+import com.example.flo_clone.ui.song.SongActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding // 뷰 바인딩 함수
@@ -44,10 +46,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun changeActivity() {
+        val song = Song(binding.playerTitleTv.text.toString(), binding.playerSingerTv.text.toString(),
+            0, 60, false)
+
         binding.mainPlayer.setOnClickListener {
             val intent = Intent(this, SongActivity::class.java)
-            intent.putExtra("title", binding.playerTitleTv.text.toString())
-            intent.putExtra("singerName", binding.playerSingerTv.text.toString())
+            //intent.putExtra("title", binding.playerTitleTv.text.toString())
+            //intent.putExtra("singer", binding.playerSingerTv.text.toString())
+            intent.putExtra("title", song.title)
+            intent.putExtra("singer", song.singer)
+            intent.putExtra("second", song.second)
+            intent.putExtra("playTime", song.playTime)
+            intent.putExtra("isPlaying", song.isPlaying)
             getResultText.launch(intent) // Song 액티비티를 시작하고 결과 처리 콜백 호출
         }
     }
