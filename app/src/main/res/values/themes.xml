@@ -7,9 +7,15 @@
 
     <style name="Theme.FLO_clone" parent="Base.Theme.FLO_clone" />
 
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">
-            @drawable/ic_flo_logo</item>
-        <item name="android:statusBarColor">@color/transparent</item>
+<!--    <style name="Theme.App.Splash" parent="Theme.AppCompat.NoActionBar">-->
+<!--        <item name="android:windowBackground">@drawable/splash</item>-->
+<!--        <item name="android:statusBarColor">@color/transparent</item>-->
+<!--    </style>-->
+
+    <style name="Theme.App.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_flo_logo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.FLO_clone</item>
     </style>
 </resources>

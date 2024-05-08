@@ -60,7 +60,10 @@ dependencies {
     // ViewPager2
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
-    //CircleIndicator
+    // CircleIndicator
     implementation("me.relex:circleindicator:2.1.6")
+
+    // Splash
+    implementation ("androidx.core:core-splashscreen:1.0.1")
 
 }
